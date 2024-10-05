@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Typing</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="tt.css">
+        <script src="tt.js" defer></script>
+    </head>
+
+    <body>
+        <div class="total">
+
+            <div class="timer">
+            <h1>Enjoy The typing test</h1>
+            <label>TIMER: </label><input id="timer" type="text" value="00:00" readonly>
+            </div>
+
+            <div class="input_output">
+            <br>
+            <input type="text" class="in" id="inputbox" readonly>
+            <input type="text" class="out"id="typebox" oninput="start()" required>
+            <br>
+            </div>
+
+            <div class="restart_submit">
+            <button type="button" class="restart_button"onclick="setnull()">restart</button>
+            <button type="button" class="submit_button" id="submit" onclick="calculate()">submit</button>
+            <br>
+        </div>
+            
+
+        <div class="score_out">
+            <label>SCORE: </label><input class="score_ouput" id="score" type="text" readonly>
+        </div>
+        </div>
+    </body>
+</html>

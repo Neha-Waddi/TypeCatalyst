@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href='https://fonts.googleapis.com/css?family=Arial Narrow' rel='stylesheet'>
+    <style>
+        .head1
+        {
+            font-family:'Arial Narrow';
+            font-size: 22px;
+            text-align:center;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+        .p1
+        {
+            font-family:'Arial Narrow';
+            font-size: 12px;
+            color:gray;
+        }
+        .button1
+        {
+            position:relative;
+            left:800px;
+            top:300px;
+            color:orange;
+        }
+        a:active
+        {
+            color:red;
+        }
+        .a1
+        {
+            font-family:'Arial Narrow';
+            position:relative;
+            left:630px;
+            color: black;
+        }
+        .b
+        {
+            background-image:url("C:\\Users\\saisu\\OneDrive\\Desktop\\proj\\typingPage\\mdl2.jpg");
+            background-repeat:no-repeat;
+        }
+        .l1
+        {
+            font-family:'Arial Narrow';
+            font-size:18px;
+            position:relative;
+            -webkit-text-stroke-width: 1px;
+            left:540px;
+            top:185px;
+        }
+        .l2
+        {
+            font-family:'Arial Narrow';
+            font-size:18px;
+            position:relative;
+            -webkit-text-stroke-width: 1px;
+            left:320px;
+            top:225px;
+        }
+        .t1
+        {
+            position:relative;
+            left:540px;
+            top:225px;
+        }
+        .t2
+        {
+            position:relative;
+            left:320px;
+            top:185px;
+        }
+    </style>
+    <body class="b">
+        <button class="button1">check</button>
+        <h1 class="head1"><b>MONKEY D. LUFFY</b></h1>
+        <label class="l1">test:</label>
+        <input class="t1" type="text">
+        <label class="l2">ans:</label>
+        <input readonly class="t2" type="text" value="HypertextMarkupLanguage">
+        <p class="p1" style="text-align:center;">SELECT THE BELOW EDIT PLEASE!</p>
+        <a href="https://youtube.com/shorts/v1JAI8I0vb8?feature=share" class="a1">LUFFY'S EDIT</a>
+        <script>
+            const e=document.getElementsByClassName("button1");
+            e[0].addEventListener("click",func)
+            function func()
+            {
+                const e1=document.getElementsByClassName("t1");
+                if(e1[0].value=="HypertextMarkupLanguage")
+                {
+                    alert("correct");
+                }
+                else
+                {
+                    alert("wrong");
+                }
+            }
+        </script>
+    </body>
+</html>
+</DOCTYPE>
