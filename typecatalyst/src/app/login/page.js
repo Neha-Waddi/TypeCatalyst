@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 
 const Login = () => {
-  const [username, setUsername] = useState(''); // Change email to username
+  const [username, setUsername] = useState(''); 
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
@@ -16,7 +16,7 @@ const Login = () => {
       e.preventDefault();
       try {
           const res = await signIn('credentials', {
-              username, // Pass username instead of email
+              username, 
               password,
               redirect: false,
           });
@@ -38,7 +38,7 @@ const Login = () => {
       <div>
           <h2>LOGIN</h2>
           <form onSubmit={handleSubmit}>
-              <label>Username:</label> {/* Change Email to Username */}
+              <label>Username:</label>
               <input onChange={(e) => setUsername(e.target.value)} type="text" name="username" required />
               <label>Password:</label>
               <input onChange={(e) => setPassword(e.target.value)} type="password" name="password" required />

@@ -16,22 +16,20 @@ const authOptions = {
             async authorize(credentials) {
                 try {
                     await connectMongodb();
-                    // Find the user by username instead of email
-                    const user = await Users.findOne({ username: credentials.username }); // Change email to username
+                    const user = await Users.findOne({ username: credentials.username });
                     if (!user) {
-                        return null; // User not found
+                        return null;
                     }
     
                     const passwordMatch = await bcrypt.compare(credentials.password, user.password);
                     if (!passwordMatch) {
-                        return null; // Invalid password
+                        return null;
                     }
     
-                    // Return user with all necessary fields
                     return { id: user._id.toString(), email: user.email, name: user.username };
                 } catch (error) {
                     console.log("Error in authorize:", error);
-                    return null; // Return null on error
+                    return null;
                 }
             }
         })
@@ -40,27 +38,27 @@ const authOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id = user.id; // Set user ID in the token
-        token.name = user.name; // Set username in the token
+        token.id = user.id; 
+        token.name = user.name;
       }
       return token;
     },
     async session({ session, token }) {
       if (token) {
-        session.user.id = token.id; // Attach user ID to session
-        session.user.name = token.name; // Attach username to session
+        session.user.id = token.id; 
+        session.user.name = token.name; 
       }
-      console.log("Session data:", session); // Log session data for debugging
+      console.log("Session data:", session);
       return session;
     }
   },
   session: {
-    strategy: "jwt", // Use JWT for session handling
+    strategy: "jwt",
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/login", // Redirect to the login page
-    signOut: "/", // Redirect after sign out
+    signIn: "/login",
+    signOut: "/",
   }
 };
 

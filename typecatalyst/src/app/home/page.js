@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react";
 
 const HomePage = () => {
     const { data: session, status } = useSession();
-    console.log("Session:", session); // Log session for debugging
+    console.log("Session:", session); 
 
     if (status === "loading") {
         return <p>Loading...</p>;
@@ -15,7 +15,7 @@ const HomePage = () => {
 
     return (
         <div>
-            <h1>Hi, {session.user.name || "Guest"}!</h1> {/* Use username from the session */}
+            <h1>Hi, {session.user.name || "Guest"}!</h1> 
         </div>
     );
 };
